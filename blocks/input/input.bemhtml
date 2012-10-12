@@ -1,0 +1,11 @@
+block input {
+
+    tag: 'input',
+
+    attrs: {
+        type: 'text',
+        name: this.ctx.name || ('input' + Math.random()),
+        value: this.ctx.value
+    }
+
+}

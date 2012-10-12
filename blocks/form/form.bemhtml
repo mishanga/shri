@@ -1,0 +1,30 @@
+block form {
+
+    tag: 'form'
+
+    js: { foo: 'bar' }
+
+    attrs: {
+        action: ''
+    }
+
+    content: {
+        elem: 'table',
+        content: {
+            elem: 'row',
+            content: this.ctx.content.map(function(i) {
+                    i.mix || (i.mix = []);
+                    i.mix.push({ block: 'form', elem: i.block });
+                    return { elem: 'col', content: i }
+                })
+        }
+    }
+
+
+    elem table, tag: 'table'
+
+    elem row, tag: 'tr'
+
+    elem col, tag: 'td'
+
+}

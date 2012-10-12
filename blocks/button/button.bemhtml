@@ -1,0 +1,11 @@
+block button {
+
+    tag: 'input'
+
+    attrs: {
+        type: 'submit',
+        name: this.ctx.name || 'button',
+        value: this.ctx.content || 'Submit'
+    }
+
+}
